@@ -7,297 +7,326 @@
     <title>Nawneet Raj - Portfolio</title>
     <style>
         /* Global Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: rgb(245, 245, 245);
-    color: rgb(79, 100, 102);
-    overflow-x: hidden;
-}
-
-/* Navbar Styling */
-nav {
-    background: rgb(79, 100, 102);
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    animation: slideDown 0.5s ease-in-out;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: rgb(204, 111, 87); /* Updated hover color */
-}
-
-/* Resume Button */
-.resume-btn {
-    background: rgb(79, 100, 102);
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.resume-btn:hover {
-    background: rgb(60, 80, 82);
-}
-
-/* Header Styling */
-header {
-    background: rgb(79, 100, 102);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-    animation: fadeIn 1s ease;
-}
-
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-photo {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-    animation: bounce 1.5s infinite;
-}
-
-header h1 {
-    margin-bottom: 10px;
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-/* Container and Section Styling */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px 0;
-    animation: fadeInUp 0.5s ease;
-}
-
-h2 {
-    color: rgb(79, 100, 102);
-    margin-bottom: 10px;
-    font-size: 2rem;
-    text-align: center;
-    transition: color 0.3s;
-}
-
-h2:hover {
-    color: rgb(204, 111, 87); /* Updated hover color */
-}
-
-p {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Skills Section */
-#skills .skills-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.skill {
-    background: rgb(79, 100, 102);
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: transform 0.3s, background 0.3s;
-}
-
-.skill:hover {
-    transform: scale(1.1);
-    background: rgb(204, 111, 87); /* Updated hover color */
-}
-
-/* Projects Section */
-#projects .project {
-    background: white;
-    margin-bottom: 20px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    animation: fadeInUp 0.5s ease;
-    transition: box-shadow 0.3s;
-}
-
-#projects h3 {
-    margin-bottom: 10px;
-    color: rgb(79, 100, 102);
-}
-
-/* Academic Results Section */
-#results .academic-table {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.academic-table table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-.academic-table th, .academic-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-.academic-table th {
-    background-color: rgb(79, 100, 102);
-    color: white;
-}
-
-.academic-table td {
-    text-align: center;
-}
-
-.academic-table td:hover {
-    background: rgb(204, 111, 87); /* Updated hover color */
-}
-
-/* Certifications Section */
-#certifications {
-    background-color: #f4f4f4;
-    padding: 20px 0;
-    text-align: center;
-    animation: fadeIn 0.5s ease;
-}
-
-#certifications ul {
-    list-style-type: none;
-}
-
-#certifications ul li {
-    background: rgb(79, 100, 102);
-    color: white;
-    margin: 10px auto;
-    padding: 10px;
-    width: 60%;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background 0.3s;
-}
-
-#certifications ul li:hover {
-    background: rgb(204, 111, 87); /* Updated hover color */
-}
-
-#certifications ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Contact Section */
-#contact {
-    background: rgb(79, 100, 102);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-    animation: fadeIn 0.5s ease;
-}
-
-.social-icons a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: rgb(245, 245, 245);
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.social-icons a:hover {
-    color: rgb(204, 111, 87); /* Updated hover color */
-}
-
-/* Footer Styling */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    animation: fadeIn 0.5s ease;
-}
-
-.footer-links a {
-    margin: 0 10px;
-    color: rgb(79, 100, 102);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: rgb(204, 111, 87); /* Updated hover color */
-}
-
-/* Keyframe Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: rgb(245, 245, 245);
+            color: rgb(79, 100, 102);
+            overflow-x: hidden;
+        }
+        
+        /* Navbar Styling */
+        nav {
+            background: rgb(79, 100, 102);
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-in-out;
+        }
+        
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        /* Resume Button */
+        .resume-btn {
+            background: rgb(79, 100, 102);
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .resume-btn:hover {
+            background: rgb(60, 80, 82);
+        }
+        
+        /* Header Styling */
+        header {
+            background: rgb(79, 100, 102);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            animation: fadeIn 1s ease;
+            margin-top: 60px; /* To offset the fixed navbar */
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite;
+        }
+        
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+        }
+        
+        /* Container and Section Styling */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        h2 {
+            color: rgb(79, 100, 102);
+            margin-bottom: 10px;
+            font-size: 2rem;
+            text-align: center;
+            transition: color 0.3s;
+        }
+        
+        h2:hover {
+            color: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Skills Section */
+        #skills .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .skill {
+            background: rgb(79, 100, 102);
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .skill:hover {
+            transform: scale(1.1);
+            background: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        /* Projects Section */
+        #projects .project {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: fadeInUp 0.5s ease;
+            transition: box-shadow 0.3s;
+        }
+        
+        #projects h3 {
+            margin-bottom: 10px;
+            color: rgb(79, 100, 102);
+        }
+        
+        /* Academic Results Section */
+        #results .academic-table {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .academic-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        
+        .academic-table th, .academic-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .academic-table th {
+            background-color: rgb(79, 100, 102);
+            color: white;
+        }
+        
+        .academic-table td {
+            text-align: center;
+        }
+        
+        .academic-table td:hover {
+            background: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        /* Certifications Section */
+        #certifications {
+            background-color: #f4f4f4;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        /* New Styles for Certifications Subsections */
+        .certifications-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .certification-category {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+        
+        .certification-category h3 {
+            color: rgb(79, 100, 102);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        /* Reuse existing styles for list items */
+        .certification-category ul {
+            list-style-type: none;
+        }
+        
+        .certification-category ul li {
+            background: rgb(79, 100, 102);
+            color: white;
+            margin: 10px auto;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .certification-category ul li:hover {
+            background: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        .certification-category ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            word-wrap: break-word; /* Ensure long URLs wrap properly */
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: rgb(79, 100, 102);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: rgb(245, 245, 245);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        /* Footer Styling */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .footer-links a {
+            margin: 0 10px;
+            color: rgb(79, 100, 102);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .certification-category {
+                width: 100%;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -389,11 +418,30 @@ footer {
     <section id="certifications">
         <div class="container">
             <h2>Certifications</h2>
-            <ul>
-                <li><a href="https://www.example.com/certification1" target="_blank">Machine Learning by Coursera</a></li>
-                <li><a href="https://www.example.com/certification2" target="_blank">Data Science by edX</a></li>
-                <li><a href="https://www.example.com/certification3" target="_blank">Web Development Bootcamp</a></li>
-            </ul>
+            <div class="certifications-container">
+                <!-- Courses Subsection -->
+                <div class="certification-category">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="https://coursera.org/verify/LGJVS5YGWLB2" target="_blank">Introduction to Web Development with HTML, CSS, JavaScript</a></li>
+                        <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/GPBG78SPVTQB" target="_blank">CertNexus Certified Artificial Intelligence Practitioner</a></li>
+                        <li><a href="https://coursera.org/verify/specialization/45CDDHQAJEBR" target="_blank">Programming in C++: A Hands-on Introduction</a></li>
+                        <li><a href="https://coursera.org/verify/C8X9KK87L6WA" target="_blank">Introduction to Hardware and Operating Systems</a></li>
+                        <li><a href="https://coursera.org/verify/ZCVZ2Y7J667M" target="_blank">Data Structures</a></li>
+                        <li><a href="https://coursera.org/verify/B7ZC63BENAG6" target="_blank">Machine Learning with Python</a></li>
+                    </ul>
+                </div>
+                <!-- Participating Events Subsection -->
+                <div class="certification-category">
+                    <h3>Participating Events</h3>
+                    <ul>
+                        <li><a href="https://www.example.com/event1" target="_blank">AI Hackathon 2023</a></li>
+                        <li><a href="https://www.example.com/event2" target="_blank">Tech Conference 2022</a></li>
+                        <li><a href="https://www.example.com/event3" target="_blank">Data Science Meetup 2021</a></li>
+                        <!-- Add more events as needed -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -441,7 +489,7 @@ footer {
             <div class="social-icons">
                 <a href="https://github.com/Nawneetbth/" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/nawneet-raj" target="_blank">LinkedIn</a>
-                <a href="jiname880@gmail.com">Email</a>
+                <a href="mailto:jiname880@gmail.com">Email</a>
             </div>
         </div>
     </section>
