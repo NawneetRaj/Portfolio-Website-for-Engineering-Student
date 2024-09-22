@@ -74,13 +74,14 @@
             align-items: center;
         }
         
-        .profile-photo {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 20px;
-            animation: bounce 1.5s infinite;
-        }
+       .profile-photo {
+    border-radius: 50%;
+    width: 200px; /* Increased width */
+    height: 200px; /* Increased height */
+    margin-bottom: 20px;
+    animation: bounce 1.5s infinite;
+}
+
         
         header h1 {
             margin-bottom: 10px;
@@ -118,40 +119,43 @@
         
         /* About Me Section with Scrolling Images */
         #about .about-images-container {
-            display: flex;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-            height: 200px; /* Adjust as needed */
-            margin-bottom: 20px; /* Space between images and additional text */
-        }
+    display: flex;
+    overflow: visible; /* Change this to visible */
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust as needed */
+    margin-bottom: 20px; /* Space between images and additional text */
+}
+
         
         #about .about-images {
             display: flex;
             animation: scroll 30s linear infinite;
         }
         
-        #about .about-images:hover {
+        #about .about-image:hover {
             animation-play-state: paused;
+            z-index: 10; /* Increase z-index on hover */
+            transform: scale(1.2);
         }
         
         #about .about-image {
             position: relative;
             flex: 0 0 auto;
             margin-right: 20px;
-            transition: transform 0.3s ease;
+            transition: transform 0.1s ease, z-index 0.1s ease;
         }
         
         #about .about-image img {
-            width: 150px;
-            height: 150px;
+            width: 300px;
+            height: 300px;
             border-radius: 10px;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.1s ease;
         }
         
         #about .about-image:hover img {
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
         
         #about .about-image:hover .note {
@@ -460,14 +464,14 @@
         <a href="#major-projects">Major Projects</a>
         <a href="#certifications">Certifications</a>
         <a href="#results">Academic Results</a>
-        <a href="resume.pdf" target="_blank" class="resume-btn">Resume</a>
+        <a href="image\NAWNEET RAJ RESUME.pdf" target="_blank" class="resume-btn">Resume</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <!-- Header with Photo -->
     <header>
         <div class="container header-content">
-            <img src="student-photo.jpg" alt="Portrait of Nawneet Raj" class="profile-photo">
+            <img src="image\dp.jpg" alt="Portrait of Nawneet Raj" class="profile-photo">
             <div>
                 <h1>Nawneet Raj</h1>
                 <p>Engineering Student at Alliance University</p>
@@ -483,53 +487,53 @@
                 <div class="about-images">
                     <!-- Image 1 -->
                     <div class="about-image">
-                        <img src="image1.jpg" alt="Project 1">
-                        <div class="note">Project 1 Note</div>
+                        <img src="image\IMG20230815090529.jpg" alt="Project 1">
+                        <div class="note">Indidependance Day</div>
                     </div>
                     <!-- Image 2 -->
                     <div class="about-image">
-                        <img src="image2.jpg" alt="Project 2">
-                        <div class="note">Project 2 Note</div>
+                        <img src="image\IMG20240227124506.png" alt="Project 2">
+                        <div class="note">C Programming Meetup</div>
                     </div>
                     <!-- Image 3 -->
                     <div class="about-image">
-                        <img src="image3.jpg" alt="Project 3">
-                        <div class="note">Project 3 Note</div>
+                        <img src="image\first.jpg" alt="Project 3">
+                        <div class="note">First Day in Alliance University</div>
                     </div>
                     <!-- Image 4 -->
                     <div class="about-image">
-                        <img src="image4.jpg" alt="Project 4">
-                        <div class="note">Project 4 Note</div>
+                        <img src="image\bonefire nigh.jpg" alt="Project 4">
+                        <div class="note">BoneFire Night</div>
                     </div>
                     <!-- Image 5 -->
                     <div class="about-image">
-                        <img src="image5.jpg" alt="Project 5">
-                        <div class="note">Project 5 Note</div>
+                        <img src="image\friends.jpg" alt="Project 5">
+                        <div class="note">Friends</div>
                     </div>
                     <!-- Image 6 -->
                     <div class="about-image">
-                        <img src="image6.jpg" alt="Project 6">
-                        <div class="note">Project 6 Note</div>
+                        <img src="image\nss.jpg" alt="Project 6">
+                        <div class="note">NSS Camp</div>
                     </div>
                     <!-- Image 7 -->
                     <div class="about-image">
-                        <img src="image7.jpg" alt="Project 7">
-                        <div class="note">Project 7 Note</div>
+                        <img src="image\promade.png" alt="Project 7">
+                        <div class="note">Promade Winner</div>
                     </div>
                     <!-- Image 8 -->
                     <div class="about-image">
-                        <img src="image8.jpg" alt="Project 8">
-                        <div class="note">Project 8 Note</div>
+                        <img src="image\IMG20230918123050.jpg" alt="Project 8">
+                        <div class="note">I made Tattoo of my Parents</div>
                     </div>
                     <!-- Image 9 -->
                     <div class="about-image">
-                        <img src="image9.jpg" alt="Project 9">
-                        <div class="note">Project 9 Note</div>
+                        <img src="image\IMG20240128130355.jpg" alt="Project 9">
+                        <div class="note">Barbique Nation</div>
                     </div>
                     <!-- Image 10 -->
                     <div class="about-image">
-                        <img src="image10.jpg" alt="Project 10">
-                        <div class="note">Project 10 Note</div>
+                        <img src="image\temple.png" alt="Project 10">
+                        <div class="note">Temple</div>
                     </div>
                 </div>
             </div>
@@ -614,7 +618,7 @@
                 </div>
                 <!-- Participating Events Subsection -->
                 <div class="certification-category">
-                    <h3>Participating Events</h3>
+                    <h3>Events</h3>
                     <ul>
                         <li><a href="https://www.example.com/event1" target="_blank" rel="noopener noreferrer">AI Hackathon 2023</a></li>
                         <li><a href="https://www.example.com/event2" target="_blank" rel="noopener noreferrer">Tech Conference 2022</a></li>
@@ -643,22 +647,22 @@
                         <tr>
                             <td>Semester 1</td>
                             <td class="gpa">8.0</td>
-                            <td><a href="semester1.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                            <td><a href="image\1ST SEM RESULT.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
                         </tr>
                         <tr>
                             <td>Semester 2</td>
                             <td class="gpa">9.1</td>
-                            <td><a href="semester2.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                            <td><a href="image\2ND SEM RESULT.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
                         </tr>
                         <tr>
                             <td>Semester 3</td>
                             <td class="gpa">8.8</td>
-                            <td><a href="semester3.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                            <td><a href="image\3RD SEM RESULT.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
                         </tr>
                         <tr>
                             <td>Semester 4</td>
                             <td class="gpa">9.1</td>
-                            <td><a href="semester4.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                            <td><a href="image\4TH SEM RESULT.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
                         </tr>
                         <!-- Overall CGPA Row -->
                         <tr id="cgpa-row">
