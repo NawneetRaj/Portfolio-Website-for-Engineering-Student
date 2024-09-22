@@ -476,6 +476,12 @@
                         <td>9.1</td>
                         <td><a href="semester4.pdf" target="_blank">Download</a></td>
                     </tr>
+                    <!-- Overall CGPA Row -->
+                        <tr id="cgpa-row">
+                            <td>Overall CGPA</td>
+                            <td id="cgpa-value">Calculating...</td>
+                            <td></td>
+                        </tr>
                 </table>
             </div>
         </div>
@@ -506,6 +512,29 @@
         </div>
         <p>&copy; 2024 Nawneet Raj. All rights reserved.</p>
     </footer>
+    <!-- JavaScript for CGPA Calculation -->
+    <script>
+        // Function to calculate CGPA
+        function calculateCGPA() {
+            const gpaElements = document.querySelectorAll('.gpa');
+            let totalGPA = 0;
+            let count = 0;
+
+            gpaElements.forEach(function(gpaEl) {
+                const gpa = parseFloat(gpaEl.textContent);
+                if (!isNaN(gpa)) {
+                    totalGPA += gpa;
+                    count++;
+                }
+            });
+
+            const cgpa = count > 0 ? (totalGPA / count).toFixed(2) : 'N/A';
+            document.getElementById('cgpa-value').textContent = cgpa;
+        }
+
+        // Calculate CGPA when the page loads
+        window.onload = calculateCGPA;
+    </script>
 
 </body>
 </html>
