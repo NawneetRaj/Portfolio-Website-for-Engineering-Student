@@ -116,6 +116,84 @@
             margin-bottom: 20px;
         }
         
+        /* About Me Section with Scrolling Images */
+        #about .about-images-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 200px; /* Adjust as needed */
+            margin-bottom: 20px; /* Space between images and additional text */
+        }
+        
+        #about .about-images {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        #about .about-images:hover {
+            animation-play-state: paused;
+        }
+        
+        #about .about-image {
+            position: relative;
+            flex: 0 0 auto;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        #about .about-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        #about .about-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        #about .about-image:hover .note {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #about .note {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            width: 140px; /* Adjust based on content */
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Additional About Me Text */
+        #about .additional-about-info {
+            font-size: 1rem;
+            color: rgb(79, 100, 102);
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+        
+        /* Keyframe for scrolling animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
         /* Skills Section */
         #skills .skills-container {
             display: flex;
@@ -138,8 +216,8 @@
             background: rgb(204, 111, 87); /* Updated hover color */
         }
         
-        /* Projects Section */
-        #projects .project {
+        /* Major Projects Section */
+        #major-projects .project {
             background: white;
             margin-bottom: 20px;
             padding: 20px;
@@ -149,8 +227,26 @@
             transition: box-shadow 0.3s;
         }
         
-        #projects h3 {
+        #major-projects h3 {
             margin-bottom: 10px;
+            color: rgb(79, 100, 102);
+        }
+        
+        /* Note at the Bottom of Major Projects */
+        #major-projects .more-projects-note {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: rgb(79, 100, 102);
+        }
+        
+        #major-projects .more-projects-note a {
+            color: rgb(204, 111, 87);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        #major-projects .more-projects-note a:hover {
             color: rgb(79, 100, 102);
         }
         
@@ -182,6 +278,12 @@
         
         .academic-table td:hover {
             background: rgb(204, 111, 87); /* Updated hover color */
+        }
+        
+        /* Highlight CGPA Row */
+        #cgpa-row {
+            background-color: rgb(235, 235, 235);
+            font-weight: bold;
         }
         
         /* Certifications Section */
@@ -325,6 +427,26 @@
             .certification-category {
                 width: 100%;
             }
+            
+            /* Adjust About Me Images for Mobile */
+            #about .about-image {
+                margin-right: 10px;
+            }
+            
+            #about .about-image img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            #about .note {
+                width: 90px;
+                font-size: 0.8rem;
+            }
+            
+            /* Adjust Additional About Info */
+            #about .additional-about-info {
+                font-size: 0.9rem;
+            }
         }
         
     </style>
@@ -335,7 +457,7 @@
     <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#major-projects">Major Projects</a>
         <a href="#certifications">Certifications</a>
         <a href="#results">Academic Results</a>
         <a href="resume.pdf" target="_blank" class="resume-btn">Resume</a>
@@ -345,7 +467,7 @@
     <!-- Header with Photo -->
     <header>
         <div class="container header-content">
-            <img src="student-photo.jpg" alt="Nawneet Raj" class="profile-photo">
+            <img src="student-photo.jpg" alt="Portrait of Nawneet Raj" class="profile-photo">
             <div>
                 <h1>Nawneet Raj</h1>
                 <p>Engineering Student at Alliance University</p>
@@ -357,8 +479,63 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>
-                I am a 3rd-year engineering student specializing in Artificial Intelligence and Machine Learning. Passionate about machine learning, automation, and technology, I strive to create innovative solutions for real-world challenges.
+            <div class="about-images-container">
+                <div class="about-images">
+                    <!-- Image 1 -->
+                    <div class="about-image">
+                        <img src="image1.jpg" alt="Project 1">
+                        <div class="note">Project 1 Note</div>
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="about-image">
+                        <img src="image2.jpg" alt="Project 2">
+                        <div class="note">Project 2 Note</div>
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="about-image">
+                        <img src="image3.jpg" alt="Project 3">
+                        <div class="note">Project 3 Note</div>
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="about-image">
+                        <img src="image4.jpg" alt="Project 4">
+                        <div class="note">Project 4 Note</div>
+                    </div>
+                    <!-- Image 5 -->
+                    <div class="about-image">
+                        <img src="image5.jpg" alt="Project 5">
+                        <div class="note">Project 5 Note</div>
+                    </div>
+                    <!-- Image 6 -->
+                    <div class="about-image">
+                        <img src="image6.jpg" alt="Project 6">
+                        <div class="note">Project 6 Note</div>
+                    </div>
+                    <!-- Image 7 -->
+                    <div class="about-image">
+                        <img src="image7.jpg" alt="Project 7">
+                        <div class="note">Project 7 Note</div>
+                    </div>
+                    <!-- Image 8 -->
+                    <div class="about-image">
+                        <img src="image8.jpg" alt="Project 8">
+                        <div class="note">Project 8 Note</div>
+                    </div>
+                    <!-- Image 9 -->
+                    <div class="about-image">
+                        <img src="image9.jpg" alt="Project 9">
+                        <div class="note">Project 9 Note</div>
+                    </div>
+                    <!-- Image 10 -->
+                    <div class="about-image">
+                        <img src="image10.jpg" alt="Project 10">
+                        <div class="note">Project 10 Note</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional About Me Text -->
+            <p class="additional-about-info">
+                With a solid foundation in software development and a keen interest in artificial intelligence, I have actively engaged in various projects that bridge the gap between theoretical concepts and practical applications. My experience spans across machine learning model development, real-time object detection, and web application design. I am committed to continuous learning and am eager to leverage my skills to contribute to innovative technological advancements. Collaborating with diverse teams and tackling complex challenges drives my passion for creating impactful solutions.
             </p>
         </div>
     </section>
@@ -379,38 +556,42 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
+    <!-- Major Projects Section -->
+    <section id="major-projects">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>Major Projects</h2>
             <div class="project">
                 <h3>Machine Learning Image Classification</h3>
                 <p>
                     Developed a machine learning model to classify images using Python and TensorFlow, achieving an accuracy of 95%.
                 </p>
-                <a href="https://github.com/nawneet-raj/image-classification" target="_blank">View on GitHub</a>
+                <a href="https://github.com/nawneet-raj/image-classification" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
             <div class="project">
                 <h3>Web-Based Task Manager</h3>
                 <p>
                     Created a task management web application using HTML, CSS, and JavaScript to help users organize and track their tasks.
                 </p>
-                <a href="https://github.com/nawneet-raj/task-manager" target="_blank">View on GitHub</a>
+                <a href="https://github.com/nawneet-raj/task-manager" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
             <div class="project">
                 <h3>Real-time Object Detection</h3>
                 <p>
                     Built a real-time object detection application using OpenCV and Python, allowing users to identify objects through a webcam feed.
                 </p>
-                <a href="https://github.com/Nawneetbth/Multi-Stage-Object-Detection-for-Person-and-PPE-Detection-Using-YOLOv8.git" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Nawneetbth/Multi-Stage-Object-Detection-for-Person-and-PPE-Detection-Using-YOLOv8.git" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
             <div class="project">
                 <h3>Personal Portfolio Website</h3>
                 <p>
                     Designed and developed my personal portfolio website using HTML, CSS, and JavaScript to showcase my skills and projects.
                 </p>
-                <a href="https://github.com/Nawneetbth/Portfolio-Website-for-Engineering-Student" target="_blank">View on GitHub</a>
+                <a href="https://github.com/Nawneetbth/Portfolio-Website-for-Engineering-Student" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
+            <!-- Professional Note -->
+            <p class="more-projects-note">
+                Interested in exploring more of my projects? Visit my <a href="https://github.com/Nawneetbth/" target="_blank" rel="noopener noreferrer">GitHub account</a> for a comprehensive list of my work.
+            </p>
         </div>
     </section>
 
@@ -423,21 +604,21 @@
                 <div class="certification-category">
                     <h3>Courses</h3>
                     <ul>
-                        <li><a href="https://coursera.org/verify/LGJVS5YGWLB2" target="_blank">Introduction to Web Development with HTML, CSS, JavaScript</a></li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/GPBG78SPVTQB" target="_blank">CertNexus Certified Artificial Intelligence Practitioner</a></li>
-                        <li><a href="https://coursera.org/verify/specialization/45CDDHQAJEBR" target="_blank">Programming in C++: A Hands-on Introduction</a></li>
-                        <li><a href="https://coursera.org/verify/C8X9KK87L6WA" target="_blank">Introduction to Hardware and Operating Systems</a></li>
-                        <li><a href="https://coursera.org/verify/ZCVZ2Y7J667M" target="_blank">Data Structures</a></li>
-                        <li><a href="https://coursera.org/verify/B7ZC63BENAG6" target="_blank">Machine Learning with Python</a></li>
+                        <li><a href="https://coursera.org/verify/LGJVS5YGWLB2" target="_blank" rel="noopener noreferrer">Introduction to Web Development with HTML, CSS, JavaScript</a></li>
+                        <li><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/GPBG78SPVTQB" target="_blank" rel="noopener noreferrer">CertNexus Certified Artificial Intelligence Practitioner</a></li>
+                        <li><a href="https://coursera.org/verify/specialization/45CDDHQAJEBR" target="_blank" rel="noopener noreferrer">Programming in C++: A Hands-on Introduction</a></li>
+                        <li><a href="https://coursera.org/verify/C8X9KK87L6WA" target="_blank" rel="noopener noreferrer">Introduction to Hardware and Operating Systems</a></li>
+                        <li><a href="https://coursera.org/verify/ZCVZ2Y7J667M" target="_blank" rel="noopener noreferrer">Data Structures</a></li>
+                        <li><a href="https://coursera.org/verify/B7ZC63BENAG6" target="_blank" rel="noopener noreferrer">Machine Learning with Python</a></li>
                     </ul>
                 </div>
                 <!-- Participating Events Subsection -->
                 <div class="certification-category">
                     <h3>Participating Events</h3>
                     <ul>
-                        <li><a href="https://www.example.com/event1" target="_blank">AI Hackathon 2023</a></li>
-                        <li><a href="https://www.example.com/event2" target="_blank">Tech Conference 2022</a></li>
-                        <li><a href="https://www.example.com/event3" target="_blank">Data Science Meetup 2021</a></li>
+                        <li><a href="https://www.example.com/event1" target="_blank" rel="noopener noreferrer">AI Hackathon 2023</a></li>
+                        <li><a href="https://www.example.com/event2" target="_blank" rel="noopener noreferrer">Tech Conference 2022</a></li>
+                        <li><a href="https://www.example.com/event3" target="_blank" rel="noopener noreferrer">Data Science Meetup 2021</a></li>
                         <!-- Add more events as needed -->
                     </ul>
                 </div>
@@ -451,37 +632,41 @@
             <h2>Academic Results</h2>
             <div class="academic-table">
                 <table>
-                    <tr>
-                        <th>Semester</th>
-                        <th>GPA</th>
-                        <th>Result PDF</th>
-                    </tr>
-                    <tr>
-                        <td>Semester 1</td>
-                        <td>8.0</td>
-                        <td><a href="semester1.pdf" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Semester 2</td>
-                        <td>9.1</td>
-                        <td><a href="semester2.pdf" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Semester 3</td>
-                        <td>8.8</td>
-                        <td><a href="semester3.pdf" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Semester 4</td>
-                        <td>9.1</td>
-                        <td><a href="semester4.pdf" target="_blank">Download</a></td>
-                    </tr>
-                    <!-- Overall CGPA Row -->
+                    <thead>
+                        <tr>
+                            <th>Semester</th>
+                            <th>GPA</th>
+                            <th>Result PDF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Semester 1</td>
+                            <td class="gpa">8.0</td>
+                            <td><a href="semester1.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>Semester 2</td>
+                            <td class="gpa">9.1</td>
+                            <td><a href="semester2.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>Semester 3</td>
+                            <td class="gpa">8.8</td>
+                            <td><a href="semester3.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                        </tr>
+                        <tr>
+                            <td>Semester 4</td>
+                            <td class="gpa">9.1</td>
+                            <td><a href="semester4.pdf" target="_blank" rel="noopener noreferrer">Download</a></td>
+                        </tr>
+                        <!-- Overall CGPA Row -->
                         <tr id="cgpa-row">
                             <td>Overall CGPA</td>
                             <td id="cgpa-value">Calculating...</td>
                             <td></td>
                         </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -493,8 +678,8 @@
             <h2>Contact Me</h2>
             <p>If you'd like to get in touch, feel free to reach out on social media!</p>
             <div class="social-icons">
-                <a href="https://github.com/Nawneetbth/" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/nawneet-raj" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Nawneetbth/" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/nawneet-raj" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="mailto:jiname880@gmail.com">Email</a>
             </div>
         </div>
@@ -505,13 +690,14 @@
         <div class="footer-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
+            <a href="#major-projects">Major Projects</a>
             <a href="#certifications">Certifications</a>
             <a href="#results">Academic Results</a>
             <a href="#contact">Contact</a>
         </div>
         <p>&copy; 2024 Nawneet Raj. All rights reserved.</p>
     </footer>
+
     <!-- JavaScript for CGPA Calculation -->
     <script>
         // Function to calculate CGPA
